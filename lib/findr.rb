@@ -3,6 +3,7 @@ require 'findr/cli'
 require 'shared-mime-info'
 require 'diffy'
 require 'colorize'
+require 'pry-byebug'
 
 module Findr
   class Findr
@@ -43,7 +44,7 @@ module Findr
     def sed_i(path)
       File.open(path, 'r') do |f_in|
         original = f_in.read
-        replaced = original.gsub(@pattern, @replacement)
+        replaced = original.gsub(/#{@pattern}/, @replacement)
         return if original == replaced
         File.open(path, 'w') do |f_out|
           f_out.write(replaced)
