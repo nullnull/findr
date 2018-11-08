@@ -3,13 +3,16 @@ require 'thor'
 
 module Findr
   class CLI < Thor
-    default_task :find_and_replace
-    desc 'find_and_replace', <<~EOT
-Details:
+    default_task :pattern
+    desc 'pattern', <<~EOT
+    Details:
+      -v, --verbose
+          Verbose mode.
     EOT
+    option :verbose, type: :boolean, aliases: :v, default: false
 
-    def find_and_replace(path = '.')
-      p path
+    def pattern(pattern, replacement, path = '**/*')
+      Findr.new(pattern, replacement, path, options).find_and_replace
     end
   end
 end
