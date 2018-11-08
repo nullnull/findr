@@ -1,5 +1,5 @@
 require "findr/version"
+require 'findr/cli'
 
 module Findr
-  # Your code goes here...
 end
