@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'findr/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'findr'
+  spec.name          = 'findr_null'
   spec.version       = Findr::VERSION
   spec.authors       = ['Katsuma Narisawa']
   spec.email         = ['katsuma.narisawa@gmail.com']

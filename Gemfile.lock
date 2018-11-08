@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    findr (0.1.0)
+    findr_null (0.1.0)
       colorize
       diffy
       mime-types
@@ -39,7 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  findr!
+  findr_null!
   rake (~> 10.0)
   rspec (~> 3.0)
 
