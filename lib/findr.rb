@@ -22,8 +22,8 @@ module Findr
         sed_i(path)
       end
 
-      print_line
       if @options[:verbose] && !@results.empty?
+        print_line
         print @results.map { |x| [x[0].bold, x[1]].join("\n") }.join("\n")
         print_line
       end

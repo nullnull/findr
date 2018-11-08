@@ -9,7 +9,7 @@ module Findr
       -v, --verbose
           Verbose mode.
     EOT
-    option :verbose, type: :boolean, aliases: :v, default: false
+    option :verbose, type: :boolean, aliases: :v, default: true
 
     def pattern(pattern, replacement, path = '**/*')
       Findr.new(pattern, replacement, path, options).find_and_replace
