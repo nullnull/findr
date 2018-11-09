@@ -3,7 +3,6 @@ require 'findr/cli'
 require 'shared-mime-info'
 require 'diffy'
 require 'colorize'
-require 'pry-byebug'
 
 module Findr
   class Findr
