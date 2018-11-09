@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 
 require "findr"
-if ['help', '--help'].include?(ARGV[0])
-  ARGV[1] = Findr::CLI.default_task
+if ['help', '-h', '--help'].include?(ARGV[0]) || ARGV.size < 2
+  ARGV[0] = 'help'
 else
   ARGV.unshift(Findr::CLI.default_task)
 end
