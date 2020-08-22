@@ -5,6 +5,15 @@ require 'diffy'
 require 'colorize'
 
 module Findr
+  PSEUDO_TEXT_TYPE_MIMES = %w(
+    application/x-ruby
+    application/x-php
+    application/x-python
+    application/json
+    application/rtf
+    application/xml
+  )
+
   class Findr
     def initialize(pattern, replacement, search_path, options = {})
       @pattern = pattern
@@ -36,8 +45,13 @@ module Findr
 
     def paths
       @paths ||= Dir.glob(@search_path).select do |path|
-        File.file?(path) && MIME.check(path).media_type == 'text'
+        File.file?(path) && text_file?(path)
       end
+    end
+
+    def text_file(path)
+      mime = MIME.check(path)
+      mime.media_type == 'text' || PSEUDO_TEXT_TYPE_MIMES.include?(mime.to_s)
     end
 
     def sed_i(path)
