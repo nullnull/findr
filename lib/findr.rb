@@ -49,7 +49,7 @@ module Findr
       end
     end
 
-    def text_file(path)
+    def text_file?(path)
       mime = MIME.check(path)
       mime.media_type == 'text' || PSEUDO_TEXT_TYPE_MIMES.include?(mime.to_s)
     end
