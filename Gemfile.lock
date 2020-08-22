@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    findr_null (1.0.2)
+    findr_null (1.0.3)
       colorize
       diffy
       mime-types
