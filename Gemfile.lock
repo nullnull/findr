@@ -41,7 +41,7 @@ GEM
       rspec-support (~> 3.9.0)
     rspec-support (3.9.3)
     shared-mime-info (0.2.5)
-    thor (1.0.1)
+    thor (1.4.0)
 
 PLATFORMS
   ruby
